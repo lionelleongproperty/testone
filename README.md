@@ -1,18 +1,21 @@
 # Real Estate Photo Enhancer (Local HTML UI)
 
-A single-file local web app (`index2.html`) that lets you:
+A single-file local app (`index2.html`) that lets you:
 
 - Upload up to **5 photos**.
 - Select an **interior style profile**.
-- Generate enhanced outputs in-browser (no server upload).
-- Download edited photos as JPEG files.
+- Send each uploaded image to **OpenAI Image Edits** (`gpt-image-1`) with your real-estate enhancement prompt.
+- Display and download the generated output images.
 
 ## Run locally
 
-Open `index2.html` in any modern browser.
+1. Open `index2.html` in a modern browser.
+2. Upload up to 5 photos.
+3. Select a style.
+4. Enter your OpenAI API key.
+5. Click **Generate with ChatGPT image editing**.
 
-## Notes
+## Important note
 
-- The app applies global image enhancements aligned with your prompt: brightness/exposure balancing, white-balance style adjustments, moderate sharpening, and conservative highlight protection.
-- It does **not** add/remove furniture or alter layout.
-- True geometric auto-alignment/perspective correction is not included in this local-only implementation.
+Because this is a static local page, your browser directly calls the OpenAI API using your key.
+For production use, route requests through your own backend so your API key is not exposed to end users.
